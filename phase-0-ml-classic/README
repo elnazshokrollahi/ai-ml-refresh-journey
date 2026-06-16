@@ -1,0 +1,57 @@
+Phase 0 — Python Power-Up
+Status: ✅ Complete
+Overview
+This phase rebuilt my Python skills from the ground up — not just syntax, but real fluency: writing clean, idiomatic code without hesitation.
+What's Covered
+Lesson 1 — Fundamentals
+Variables, strings & f-strings, lists, dicts, tuples, sets, loops (enumerate, .items()), functions, conditionals.
+Lesson 2 — List Comprehensions
+Filtering and transforming data in a single line instead of multi-line loops — the most "Pythonic" tool used constantly in ML code.
+Lesson 3 — Functions in Depth
+*args (unnamed arguments → tuple), **kwargs (named arguments → dict), lambda functions, and passing functions as arguments. Practiced combining all three in business-style reporting functions.
+Lesson 4 — Object-Oriented Programming
+Classes, __init__, self, methods, inheritance, and super(). Built a parent/child class hierarchy (AIModel → FinanceModel / HealthModel) — the same pattern PyTorch uses for every neural network (class MyModel(nn.Module)).
+Lesson 5 — File I/O & Error Handling
+Reading/writing JSON and CSV files, try/except/finally, and handling common errors (FileNotFoundError, KeyError).
+Lesson 6 — Modules & Environments
+Built-in modules (os, random, math), installing packages with pip, virtual environments, and writing/importing a custom module (ai_utils.py).
+Key Project
+A multi-class hierarchy simulating an AI consulting business:
+
+class AIModel:
+
+    def __init__(self, name, accuracy, speed): ...
+
+    def describe(self): ...
+
+    def is_production_ready(self): ...
+
+class FinanceModel(AIModel):
+
+    def risk_check(self): ...
+
+class HealthModel(AIModel):
+
+    def safety_check(self): ...
+
+Plus a function combining everything from this phase at once:
+
+def summarize_models(*args, **kwargs):
+
+    threshold = kwargs["threshold"]
+
+    [print(f"{m['name']}: {m['accuracy']:.0%}")
+
+     for m in args if m["accuracy"] > threshold]
+Files in This Folder
+Add your notebooks here, e.g.:
+
+lesson1_fundamentals.ipynb
+lesson2_list_comprehensions.ipynb
+lesson3_functions_in_depth.ipynb
+lesson4_oop.ipynb
+lesson5_file_io_error_handling.ipynb
+lesson6_modules_environments.ipynb
+Key Takeaway
+Every concept here directly feeds into how ML libraries are built — OOP becomes PyTorch's nn.Module, **kwargs shows up in every scikit-learn model, and list comprehensions become second nature for data prep.
+
